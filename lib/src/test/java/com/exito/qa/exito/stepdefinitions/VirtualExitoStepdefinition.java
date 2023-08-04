@@ -23,9 +23,15 @@ import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 
+import com.exito.qa.exito.tasks.OpenTheBrowser;
+import com.exito.qa.exito.tasks.OpenTheProduct;
+import com.exito.qa.exito.tasks.SelectTheProduct;
 import com.exito.qa.exito.userinterfaces.ExitoHomePage;
+import com.exito.qa.exito.userinterfaces.ExitoProduct;
 import com.exito.qa.exito.utils.BrowserUtil;
+import com.exito.qa.exito.utils.ConsoleMessageUtil;
 import com.exito.qa.exito.utils.ScreenshotUtil;
+import com.exito.qa.exito.utils.SleepUtil;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -56,6 +62,7 @@ public class VirtualExitoStepdefinition {
 	    
 		// Instancia // Instancio otro para abrir
 		private ExitoHomePage exitoHomePage;
+		private ExitoProduct exitoProduct;
 		//private PageObject ExitoHomePage;
 		
 		// Variable para realizar un seguimiento del �ltimo escenario
@@ -84,7 +91,26 @@ public class VirtualExitoStepdefinition {
 		}
 	
 
+		@Given("that the User want select to categori in the application")
+		public void that_the_user_want_select_to_categori_in_the_application() {
+		  
+			ConsoleMessageUtil.printMessage("ejecutarGiven");
+			vlady.wasAbleTo(OpenTheBrowser.at(exitoHomePage));
+			vlady.wasAbleTo(OpenTheProduct.at(exitoHomePage));
+			
+		}
 
+		@When("User select five product")
+		public void user_select_five_product() {
+			vlady.attemptsTo(SelectTheProduct.at(exitoProduct));
+			
+		}
+
+		@Then("User should see the products in the car")
+		public void user_should_see_the_products_in_the_car() {
+		    // Write code here that turns the phrase above into concrete actions
+		    throw new io.cucumber.java.PendingException();
+		}
 	
         
         

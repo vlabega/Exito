@@ -10,18 +10,20 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("https://www.exito.com")
+@DefaultUrl("https://www.exito.com/")
 //@DefaultUrl(DefaultURLUtil.getDefaultUrl())
 //@DefaultUrl(ConfigUtil.getDefaultUrl())
 public class ExitoHomePage extends PageObject{
 
 	// Mapear los objetos.
-	// Xphats
+	public static final Target EXITO_ICONPANEL = Target.the("Exito icon Panel").located(By.id("category-menu"));
+	public static final Target EXITO_LISTPANELTECNOLOGIA = Target.the("List Link Panel Tecnologia").located(By.id("undefined-nivel2-Tecnología"));
+	public static final Target EXITO_LISTPANELTECNOLOGIATODO = Target.the("List Link Panel Tecnologia todo").located(By.id("Categorías-nivel1-Tecnología-button"));
+	public static final Target EXITO_TVS = Target.the("List Link Panel Tecnologia TVs").located(By.id("Categorías-nivel2-Televisores"));	
 	
-	public static final Target COMPUTRABAJO_LOGO = Target.the("computrabajo logo").locatedByFirstMatching("/html/body/header/div/a/img");
-	public static final Target COMPUTRABAJO_LINKPAIS = Target.the("computrabajo link Pais").located(By.id("Colombialink"));
 	
-	public static final Target COMPUTRABAJO_ICONPANEL = Target.the("computrabajo icon Panel").located(By.id("open_menu"));
-	public static final Target COMPUTRABAJO_INGRESAR = Target.the("computrabajo INGRESAR").locatedByFirstMatching("/html/body/div[1]/div/div/div[1]/div/div/a[1]");
+	//*[@id="gallery-layout-container"]/div[17]/section/a/article/div[2]/div[2]/div/div/div/div[2]/div/div/div[2]/div/div[2]/div[2]/button/div
+	//*[@id="gallery-layout-container"]/div[1]/section/a/article/div[2]/div[2]/div/div/div/div[2]/div/div/div[2]/div/div[2]/div[2]/button/div
+	public static final Target COMPUTRABAJO_AGREGAR = Target.the("computrabajo AGREGA").located(By.linkText("Agregar"));
 	
 }

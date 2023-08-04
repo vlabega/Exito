@@ -16,7 +16,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		
 		features = "src/test/resources/features",
         glue = "com.exito.qa.exito.stepdefinitions",
-        tags = "@virtualExito",
+        tags = "@VirtualExito",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         dryRun = false,
         monochrome = true,
